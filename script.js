@@ -2,38 +2,34 @@ let currentStep = 1;
 const outputDiv = document.getElementById('output');
 const promptDiv = document.getElementById('prompt');
 const inputBox = document.getElementById('input');
-let bigIdea1Text = ""; // Variable to store the text input from Big Idea 1
+let bigIdea1Text = "";
+let bigIdea2Text = "";
+let bigIdea3Text = "";
 
 function nextStep() {
-    // Save the input value or perform any other necessary logic here
     const inputValue = inputBox.value;
 
     if (currentStep === 3) {
-        bigIdea1Text = inputValue; // Save the text input from Big Idea 1
+        bigIdea1Text = inputValue;
     }
     if (currentStep === 4) {
-        bigIdea2Text = inputValue; // Save the text input from Big Idea 2
+        bigIdea2Text = inputValue;
     }
     if (currentStep === 5) {
-        bigIdea3Text = inputValue; // Save the text input from Big Idea 3
+        bigIdea3Text = inputValue;
     }
     if (currentStep === 18) {
-        // Change the text on the button to "Finish"
         const continueButton = document.querySelector('#continueButton');
         continueButton.textContent = "Finish";
     }
 
     outputDiv.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${inputValue}</p>`;
 
-    // Move to the next step
     currentStep++;
-
-    // Update the prompt and clear the input box for the next step
     updateStep();
 }
 
 function updateStep() {
-    // Example: Update prompt and placeholder for the next step
     if (currentStep === 2) {
         promptDiv.textContent = "What problem are you solving? Why does it matter?";
         inputBox.placeholder = "Your response";
@@ -85,12 +81,13 @@ function updateStep() {
     } else if (currentStep === 18) {
         promptDiv.textContent = "Wrap it up";
         inputBox.placeholder = "Your response";
-    }  else if (currentStep === 19) {
+    } else if (currentStep === 19) {
         promptDiv.textContent = "Call to Action";
         inputBox.placeholder = "Your response";
-    } 
+    }
+}
 
-        
-        
-    // Add more conditions for additional steps as needed
+function toggleResponses() {
+    const previousResponses = document.getElementById('previousResponses');
+    previousResponses.classList.toggle('hidden');
 }
