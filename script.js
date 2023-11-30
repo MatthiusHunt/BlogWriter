@@ -18,9 +18,6 @@ function nextStep() {
         bigIdea3Text = inputValue; // Save the text input from Big Idea 3
     }
     if (currentStep === 19) {
-        promptDiv.textContent = "Your Step 17 Prompt";
-        inputBox.placeholder = "Your response";
-        
         // Change the text on the button to "Finish"
         const continueButton = document.querySelector('#continueButton');
         continueButton.textContent = "Finish";
