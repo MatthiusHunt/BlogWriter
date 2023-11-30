@@ -17,6 +17,14 @@ function nextStep() {
     if (currentStep === 5) {
         bigIdea3Text = inputValue; // Save the text input from Big Idea 3
     }
+    if (currentStep === 17) {
+        promptDiv.textContent = "Your Step 17 Prompt";
+        inputBox.placeholder = "Your response";
+        
+        // Change the text on the button to "Finish"
+        const continueButton = document.querySelector('#continueButton');
+        continueButton.textContent = "Finish";
+    }
 
     outputDiv.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${inputValue}</p>`;
 
@@ -42,40 +50,40 @@ function updateStep() {
         promptDiv.textContent = "Big Idea 3";
         inputBox.placeholder = "Your response";
     } else if (currentStep === 6) {
-        promptDiv.textContent = `${bigIdea1Text} : Argument 1`;
+        promptDiv.textContent = `${bigIdea1Text}: Argument 1`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 7) {
-        promptDiv.textContent = `${bigIdea1Text} : Argument 2`;
+        promptDiv.textContent = `${bigIdea1Text}: Argument 2`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 8) {
-        promptDiv.textContent = `${bigIdea1Text} : Argument 3`;
+        promptDiv.textContent = `${bigIdea1Text}: Argument 3`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 9) {
-        promptDiv.textContent = `${bigIdea1Text} : Value Shot`;
+        promptDiv.textContent = `${bigIdea1Text}: Value Shot`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 10) {
-        promptDiv.textContent = `${bigIdea2Text} : Argument 1`;
+        promptDiv.textContent = `${bigIdea2Text}: Argument 1`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 11) {
-        promptDiv.textContent = `${bigIdea2Text} : Argument 2`;
+        promptDiv.textContent = `${bigIdea2Text}: Argument 2`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 12) {
-        promptDiv.textContent = `${bigIdea2Text} : Argument 3`;
+        promptDiv.textContent = `${bigIdea2Text}: Argument 3`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 13) {
-        promptDiv.textContent = `${bigIdea2Text} : Value Shot`;
+        promptDiv.textContent = `${bigIdea2Text}: Value Shot`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 14) {
-        promptDiv.textContent = `${bigIdea3Text} : Argument 1`;
+        promptDiv.textContent = `${bigIdea3Text}: Argument 1`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 15) {
-        promptDiv.textContent = `${bigIdea3Text} : Argument 2`;
+        promptDiv.textContent = `${bigIdea3Text}: Argument 2`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 14) {
-        promptDiv.textContent = `${bigIdea3Text} : Argument 3`;
+        promptDiv.textContent = `${bigIdea3Text}: Argument 3`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 15) {
-        promptDiv.textContent = `${bigIdea3Text} : Value Shot`;
+        promptDiv.textContent = `${bigIdea3Text}: Value Shot`;
         inputBox.placeholder = "Your response";
     } else if (currentStep === 16) {
         promptDiv.textContent = "Wrap it up";
