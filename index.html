@@ -11,12 +11,13 @@
         <div id="title" class="block">
             <label for="titleContent">Title:</label>
             <input type="text" id="titleContent" placeholder="Enter your title">
+            <button onclick="goToNext('introContent')">Continue</button>
         </div>
 
         <div id="intro" class="block">
             <label for="introContent">Intro/Why:</label>
             <textarea id="introContent" placeholder="Enter your introduction"></textarea>
-            <button onclick="generateBigIdeas()">Generate Big Ideas</button>
+            <button onclick="goToNext('bigIdea1Content')">Continue</button>
         </div>
 
         <div id="bigIdeasContainer"></div>
@@ -24,8 +25,13 @@
         <div id="conclusion" class="block">
             <label for="conclusionContent">Conclusion:</label>
             <textarea id="conclusionContent" placeholder="Enter your conclusion"></textarea>
+            <button onclick="goToNext('callToAction')">Continue</button>
+        </div>
+
+        <div id="callToAction" class="block">
             <label for="callToAction">Call to Action:</label>
             <input type="text" id="callToAction" placeholder="Enter your call to action">
+            <button onclick="finish()">Finish</button>
         </div>
     </div>
 
