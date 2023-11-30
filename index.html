@@ -8,25 +8,26 @@
 </head>
 <body>
     <div id="app">
+        <div id="title" class="block">
+            <label for="titleContent">Title:</label>
+            <input type="text" id="titleContent" placeholder="Enter your title">
+        </div>
+
         <div id="intro" class="block">
-            <label for="introTitle">Title:</label>
-            <input type="text" id="introTitle">
-            <label for="introContent">Intro:</label>
-            <textarea id="introContent"></textarea>
-            <button onclick="generateBigIdeas()">Generate Big Ideas</button>
+            <label for="introContent">Intro/Why:</label>
+            <textarea id="introContent" placeholder="Enter your introduction"></textarea>
         </div>
 
         <div id="bigIdeasContainer"></div>
 
         <div id="conclusion" class="block">
             <label for="conclusionContent">Conclusion:</label>
-            <textarea id="conclusionContent"></textarea>
+            <textarea id="conclusionContent" placeholder="Enter your conclusion"></textarea>
             <label for="callToAction">Call to Action:</label>
-            <input type="text" id="callToAction">
+            <input type="text" id="callToAction" placeholder="Enter your call to action">
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
