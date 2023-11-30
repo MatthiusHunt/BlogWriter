@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Blog Post Helper</title>
+</head>
+<body>
+    <div id="app">
+        <div id="intro" class="block">
+            <label for="introTitle">Title:</label>
+            <input type="text" id="introTitle">
+            <label for="introContent">Intro:</label>
+            <textarea id="introContent"></textarea>
+            <button onclick="generateBigIdeas()">Generate Big Ideas</button>
+        </div>
+
+        <div id="bigIdeasContainer"></div>
+
+        <div id="conclusion" class="block">
+            <label for="conclusionContent">Conclusion:</label>
+            <textarea id="conclusionContent"></textarea>
+            <label for="callToAction">Call to Action:</label>
+            <input type="text" id="callToAction">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
