@@ -17,7 +17,7 @@ function nextStep() {
     if (currentStep === 5) {
         bigIdea3Text = inputValue; // Save the text input from Big Idea 3
     }
-    if (currentStep === 19) {
+    if (currentStep === 18) {
         // Change the text on the button to "Finish"
         const continueButton = document.querySelector('#continueButton');
         continueButton.textContent = "Finish";
