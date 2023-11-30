@@ -11,27 +11,27 @@
 <div id="blog-container">
     <h1>Blog Writer v.01</h1>
     <div id="output"></div>
-    <div id="step1">
-        <div class="prompt">Write a title:</div>
-        <input type="text" id="titleInput">
-        <button onclick="nextStep()">Continue</button>
-    </div>
-    <div id="step2" class="hidden">
-        <div class="prompt">What problem are you solving? Why does it matter?</div>
-        <textarea id="problemInput"></textarea>
-        <button onclick="nextStep()">Continue</button>
-    </div>
-    <!-- Repeat similar structures for other steps -->
-    <!-- ... -->
 
-    <div id="finish" class="hidden">
-        <div class="prompt">Call to Action:</div>
-        <textarea id="callToActionInput"></textarea>
-        <button onclick="finish()">Finish</button>
-    </div>
+    <script src="script.js"></script>
+    <script>
+        const prompts = [
+            "Write a title",
+            "What problem are you solving? Why does it matter?",
+            "Big Idea 1",
+            "Big Idea 2",
+            "Big Idea 3",
+            "Argument 1",
+            "Argument 2",
+            "Argument 3",
+            "Value Shot",
+            // Add more prompts as needed
+            "Wrap it up in a bow",
+            "Call to Action"
+        ];
+
+        createSteps(prompts);
+    </script>
 </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
