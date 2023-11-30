@@ -2,6 +2,8 @@ let currentStep = 1;
 const outputDiv = document.getElementById('output');
 const promptDiv = document.getElementById('prompt');
 const inputBox = document.getElementById('input');
+const pastResponsesContent = document.getElementById('pastResponsesContent');
+const previousResponses = document.getElementById('previousResponses');
 let bigIdea1Text = "";
 let bigIdea2Text = "";
 let bigIdea3Text = "";
@@ -23,7 +25,7 @@ function nextStep() {
         continueButton.textContent = "Finish";
     }
 
-    outputDiv.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${inputValue}</p>`;
+    pastResponsesContent.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${inputValue}</p>`;
 
     currentStep++;
     updateStep();
@@ -88,6 +90,5 @@ function updateStep() {
 }
 
 function toggleResponses() {
-    const previousResponses = document.getElementById('previousResponses');
-    previousResponses.classList.toggle('hidden');
+    pastResponsesContent.classList.toggle('hidden');
 }
