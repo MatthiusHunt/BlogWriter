@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<div id="blog-container">
+<div id="blog-container" class="center">
     <h1>Blog Writer v.01</h1>
-    <div id="output"></div>
-    <div class="step">
+    <div id="output" class="hidden">
+        <h2>Previous Inputs</h2>
+        <div id="previousInputs"></div>
+    </div>
+
+    <div class="step center">
         <div class="prompt" id="prompt">Write a title:</div>
         <input type="text" id="input" placeholder="Your title">
         <button id="continueButton" onclick="nextStep()">Continue</button>
