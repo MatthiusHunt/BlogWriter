@@ -10,15 +10,19 @@
 
 <div id="blog-container" class="center">
     <h1>Blog Writer v.01</h1>
-    <div id="output" class="hidden">
-        <h2>Previous Inputs</h2>
-        <div id="previousInputs"></div>
-    </div>
 
     <div class="step center">
         <div class="prompt" id="prompt">Write a title:</div>
         <input type="text" id="input" placeholder="Your title">
         <button id="continueButton" onclick="nextStep()">Continue</button>
+    </div>
+
+    <div id="output" class="hidden">
+        <button id="toggleResponses" onclick="toggleResponses()">Show Past Responses</button>
+        <div id="previousResponses" class="hidden">
+            <h2>Past Responses</h2>
+            <div id="pastResponsesContent"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
