@@ -1,33 +1,27 @@
-let currentSectionIndex = 0;
-const sections = [
-    'titleContent',
-    'introContent',
-    'bigIdea1Content',
-    'bigIdea2Content',
-    'bigIdea3Content',
-    'conclusionContent',
-    'callToAction'
-];
+let currentStep = 1;
+const outputDiv = document.getElementById('output');
+const steps = document.querySelectorAll('[id^="step"]');
+const finishStep = document.getElementById('finish');
 
-function goToNext(nextSection) {
-    if (currentSectionIndex < sections.length - 1) {
-        document.getElementById(sections[currentSectionIndex]).style.display = 'none';
-        currentSectionIndex++;
-        document.getElementById(sections[currentSectionIndex]).style.display = 'block';
+function nextStep() {
+    const currentStepDiv = document.getElementById(`step${currentStep}`);
+    currentStepDiv.classList.add('hidden');
+    currentStep++;
 
-        if (currentSectionIndex === 3 || currentSectionIndex === 4) {
-            // Update the header for the Big Idea sections
-            const bigIdeaHeaderText = document.getElementById(sections[currentSectionIndex - 1]).value;
-            document.getElementById(`bigIdea${currentSectionIndex - 2}Header`).innerText = bigIdeaHeaderText;
-        }
+    if (currentStep <= steps.length) {
+        const nextStepDiv = document.getElementById(`step${currentStep}`);
+        nextStepDiv.classList.remove('hidden');
+    } else {
+        finishStep.classList.remove('hidden');
     }
 }
 
 function finish() {
-    // Display the final content
-    const finalContent = sections.map(section => {
-        return `${document.getElementById(section).value}`;
-    }).join('\n\n');
-    
-    alert(finalContent);
+    // Collect all input values and display the output
+    let outputText = '';
+    for (let i = 1; i <= steps.length; i++) {
+        const input = document.getElementById(`input${i}`);
+        outputText += `<p><strong>${input.placeholder}:</strong> ${input.value}</p>`;
+    }
+    outputDiv.innerHTML = outputText;
 }
