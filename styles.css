@@ -21,16 +21,11 @@ body {
     display: none;
 }
 
-#previousInputs {
-    max-width: 400px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+#previousResponses {
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-#previousInputs p {
-    margin: 5px 0;
-}
-
-#output h2 {
+#previousResponses h2 {
     margin-bottom: 10px;
 }
