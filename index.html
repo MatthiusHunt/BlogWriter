@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Writer v.01</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Blog Post Helper</title>
 </head>
 <body>
-    <div id="app">
-        <div id="title" class="block">
-            <label for="titleContent">Title:</label>
-            <input type="text" id="titleContent" placeholder="Enter your title">
-            <button onclick="goToNext('introContent')">Continue</button>
-        </div>
 
-        <div id="intro" class="block">
-            <label for="introContent">Intro/Why:</label>
-            <textarea id="introContent" placeholder="Enter your introduction"></textarea>
-            <button onclick="goToNext('bigIdea1Content')">Continue</button>
-        </div>
-
-        <div id="bigIdeasContainer"></div>
-
-        <div id="conclusion" class="block">
-            <label for="conclusionContent">Conclusion:</label>
-            <textarea id="conclusionContent" placeholder="Enter your conclusion"></textarea>
-            <button onclick="goToNext('callToAction')">Continue</button>
-        </div>
-
-        <div id="callToAction" class="block">
-            <label for="callToAction">Call to Action:</label>
-            <input type="text" id="callToAction" placeholder="Enter your call to action">
-            <button onclick="finish()">Finish</button>
-        </div>
+<div id="blog-container">
+    <h1>Blog Writer v.01</h1>
+    <div id="output"></div>
+    <div id="step1">
+        <div class="prompt">Write a title:</div>
+        <input type="text" id="titleInput">
+        <button onclick="nextStep()">Continue</button>
     </div>
+    <div id="step2" class="hidden">
+        <div class="prompt">What problem are you solving? Why does it matter?</div>
+        <textarea id="problemInput"></textarea>
+        <button onclick="nextStep()">Continue</button>
+    </div>
+    <!-- Repeat similar structures for other steps -->
+    <!-- ... -->
 
-    <script src="script.js"></script>
+    <div id="finish" class="hidden">
+        <div class="prompt">Call to Action:</div>
+        <textarea id="callToActionInput"></textarea>
+        <button onclick="finish()">Finish</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
