@@ -1,43 +1,28 @@
-let currentStep = 0;
+let currentStep = 1;
 const outputDiv = document.getElementById('output');
-const stepsContainer = document.getElementById('blog-container');
-const steps = [];
+const promptDiv = document.getElementById('prompt');
+const inputBox = document.getElementById('input');
 
-function createSteps(prompts) {
-    prompts.forEach((prompt, index) => {
-        const step = document.createElement('div');
-        step.classList.add('step', 'hidden');
-        step.innerHTML = `
-            <div class="prompt">${prompt}</div>
-            <textarea id="input${index + 1}"></textarea>
-            <button onclick="nextStep(${index})">Continue</button>
-        `;
-        stepsContainer.appendChild(step);
-        steps.push(step);
-    });
+function nextStep() {
+    // Save the input value or perform any other necessary logic here
+    const inputValue = inputBox.value;
+    outputDiv.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${inputValue}</p>`;
 
-    steps[0].classList.remove('hidden'); // Show the first step
+    // Move to the next step
+    currentStep++;
+
+    // Update the prompt and clear the input box for the next step
+    updateStep();
 }
 
-function nextStep(index) {
-    const currentStepDiv = steps[currentStep];
-    currentStepDiv.classList.add('hidden');
-    currentStep = index + 1;
-
-    if (currentStep < steps.length) {
-        const nextStepDiv = steps[currentStep];
-        nextStepDiv.classList.remove('hidden');
-    } else {
-        finish();
+function updateStep() {
+    // Example: Update prompt and placeholder for the next step
+    if (currentStep === 2) {
+        promptDiv.textContent = "What problem are you solving? Why does it matter?";
+        inputBox.placeholder = "Your response";
+    } else if (currentStep === 3) {
+        promptDiv.textContent = "Big Idea 1";
+        inputBox.placeholder = "Your response";
     }
-}
-
-function finish() {
-    // Collect all input values and display the output
-    let outputText = '';
-    for (let i = 1; i <= steps.length; i++) {
-        const input = document.getElementById(`input${i}`);
-        outputText += `<p><strong>${input.previousElementSibling.textContent}:</strong> ${input.value}</p>`;
-    }
-    outputDiv.innerHTML = outputText;
+    // Add more conditions for additional steps as needed
 }
