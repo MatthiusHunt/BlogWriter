@@ -10,7 +10,7 @@ function createSteps(prompts) {
         step.innerHTML = `
             <div class="prompt">${prompt}</div>
             <textarea id="input${index + 1}"></textarea>
-            <button onclick="nextStep()">Continue</button>
+            <button onclick="nextStep(${index})">Continue</button>
         `;
         stepsContainer.appendChild(step);
         steps.push(step);
@@ -19,10 +19,10 @@ function createSteps(prompts) {
     steps[0].classList.remove('hidden'); // Show the first step
 }
 
-function nextStep() {
+function nextStep(index) {
     const currentStepDiv = steps[currentStep];
     currentStepDiv.classList.add('hidden');
-    currentStep++;
+    currentStep = index + 1;
 
     if (currentStep < steps.length) {
         const nextStepDiv = steps[currentStep];
