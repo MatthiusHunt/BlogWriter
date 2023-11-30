@@ -1,18 +1,34 @@
-let currentStep = 1;
+let currentStep = 0;
 const outputDiv = document.getElementById('output');
-const steps = document.querySelectorAll('[id^="step"]');
-const finishStep = document.getElementById('finish');
+const stepsContainer = document.getElementById('blog-container');
+const steps = [];
+
+function createSteps(prompts) {
+    prompts.forEach((prompt, index) => {
+        const step = document.createElement('div');
+        step.classList.add('step', 'hidden');
+        step.innerHTML = `
+            <div class="prompt">${prompt}</div>
+            <textarea id="input${index + 1}"></textarea>
+            <button onclick="nextStep()">Continue</button>
+        `;
+        stepsContainer.appendChild(step);
+        steps.push(step);
+    });
+
+    steps[0].classList.remove('hidden'); // Show the first step
+}
 
 function nextStep() {
-    const currentStepDiv = document.getElementById(`step${currentStep}`);
+    const currentStepDiv = steps[currentStep];
     currentStepDiv.classList.add('hidden');
     currentStep++;
 
-    if (currentStep <= steps.length) {
-        const nextStepDiv = document.getElementById(`step${currentStep}`);
+    if (currentStep < steps.length) {
+        const nextStepDiv = steps[currentStep];
         nextStepDiv.classList.remove('hidden');
     } else {
-        finishStep.classList.remove('hidden');
+        finish();
     }
 }
 
@@ -21,7 +37,7 @@ function finish() {
     let outputText = '';
     for (let i = 1; i <= steps.length; i++) {
         const input = document.getElementById(`input${i}`);
-        outputText += `<p><strong>${input.placeholder}:</strong> ${input.value}</p>`;
+        outputText += `<p><strong>${input.previousElementSibling.textContent}:</strong> ${input.value}</p>`;
     }
     outputDiv.innerHTML = outputText;
 }
