@@ -104,3 +104,30 @@ function getPastResponsesHTML() {
             <p><strong>${promptDiv.textContent}:</strong> ${bigIdea3Text}</p>`;
 }
 
+function updateStep() {
+    // ... (your existing code)
+
+    if (currentStep === 19) {
+        promptDiv.textContent = "Call to Action";
+        inputBox.placeholder = "Your response";
+        const continueButton = document.querySelector('#continueButton');
+        continueButton.textContent = "Finish";
+        continueButton.onclick = displayPastResponses;
+    }
+}
+
+function displayPastResponses() {
+    // Display past responses line by line
+    const pastResponsesArray = [bigIdea1Text, bigIdea2Text, bigIdea3Text];
+    pastResponsesArray.forEach(response => {
+        pastResponsesContent.innerHTML += `<p><strong>${promptDiv.textContent}:</strong> ${response}</p>`;
+    });
+
+    // Optionally, you can clear the input box and disable it after displaying past responses
+    inputBox.value = "";
+    inputBox.disabled = true;
+
+    // Update the prompt to inform the user
+    promptDiv.textContent = "Past responses displayed. You can now finish the blog post.";
+}
+
