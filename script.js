@@ -84,11 +84,14 @@ function updateStep() {
         promptDiv.textContent = "Wrap it up";
         inputBox.placeholder = "Your response";
     } else if (currentStep === 19) {
-        promptDiv.textContent = "Call to Action";
-        inputBox.placeholder = "Your response";
+        // Hide the prompt, input, and continue button
+        promptDiv.style.display = "none";
+        inputBox.style.display = "none";
         const continueButton = document.querySelector('#continueButton');
-        continueButton.textContent = "Finish";
-        continueButton.onclick = displayPastResponses;
+        continueButton.style.display = "none";
+
+        // Display past responses instead
+        displayPastResponses();
     }
 }
 
