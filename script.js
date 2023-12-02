@@ -87,6 +87,13 @@ function updateStep() {
         promptDiv.textContent = "Call to Action";
         inputBox.placeholder = "Your response";
     }
+    if (currentStep === 19) {
+        promptDiv.textContent = "Call to Action";
+        inputBox.placeholder = "Your response";
+        const continueButton = document.querySelector('#continueButton');
+        continueButton.textContent = "Finish";
+        continueButton.onclick = displayPastResponses;
+    }
 }
 
 function toggleResponses() {
@@ -104,17 +111,7 @@ function getPastResponsesHTML() {
             <p><strong>${promptDiv.textContent}:</strong> ${bigIdea3Text}</p>`;
 }
 
-function updateStep() {
-    // ... (your existing code)
 
-    if (currentStep === 19) {
-        promptDiv.textContent = "Call to Action";
-        inputBox.placeholder = "Your response";
-        const continueButton = document.querySelector('#continueButton');
-        continueButton.textContent = "Finish";
-        continueButton.onclick = displayPastResponses;
-    }
-}
 
 function displayPastResponses() {
     // Display past responses line by line
