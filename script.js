@@ -86,10 +86,6 @@ function updateStep() {
     } else if (currentStep === 19) {
         promptDiv.textContent = "Call to Action";
         inputBox.placeholder = "Your response";
-    }
-    if (currentStep === 19) {
-        promptDiv.textContent = "Call to Action";
-        inputBox.placeholder = "Your response";
         const continueButton = document.querySelector('#continueButton');
         continueButton.textContent = "Finish";
         continueButton.onclick = displayPastResponses;
