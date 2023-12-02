@@ -90,5 +90,17 @@ function updateStep() {
 }
 
 function toggleResponses() {
-    pastResponsesContent.classList.toggle('hidden');
+    const isHidden = pastResponsesContent.classList.toggle('hidden');
+    if (!isHidden) {
+        // If the past responses are visible, update the content
+        pastResponsesContent.innerHTML = getPastResponsesHTML();
+    }
 }
+
+function getPastResponsesHTML() {
+    // Create and return the HTML for past responses
+    return `<p><strong>${promptDiv.textContent}:</strong> ${bigIdea1Text}</p>
+            <p><strong>${promptDiv.textContent}:</strong> ${bigIdea2Text}</p>
+            <p><strong>${promptDiv.textContent}:</strong> ${bigIdea3Text}</p>`;
+}
+
